@@ -1,7 +1,8 @@
-package me.inassar.koindependencyinjection
+package me.inassar.koindependencyinjection.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import me.inassar.koindependencyinjection.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
