@@ -12,6 +12,7 @@ class MainActivityState : BaseState {
 }
 
 sealed class ValidateLoginState {
-    object EmailEmpty : ValidateLoginState()
+    object UsernameEmpty : ValidateLoginState()
     object PasswordEmpty : ValidateLoginState()
+    object Success : ValidateLoginState()
 }
