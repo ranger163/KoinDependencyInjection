@@ -1,4 +1,7 @@
 package me.inassar.koindependencyinjection.view
 
-class MainActivityState {
+import me.inassar.koindependencyinjection.base.BaseState
+
+class MainActivityState : BaseState {
+
 }
