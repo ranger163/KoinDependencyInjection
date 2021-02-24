@@ -6,6 +6,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import me.inassar.koindependencyinjection.BR
 
 abstract class BaseActivity<BINDING : ViewDataBinding, STATE : BaseState, VIEWMODEL : BaseViewModel>
     (@LayoutRes val layoutId: Int) : AppCompatActivity() {
@@ -20,6 +21,7 @@ abstract class BaseActivity<BINDING : ViewDataBinding, STATE : BaseState, VIEWMO
         super.onCreate(savedInstanceState, persistentState)
         initView()
         initDataBinding()
+        observeViewState(state) // Call ObserveViewState
     }
 
     open fun initView() {
@@ -31,6 +33,8 @@ abstract class BaseActivity<BINDING : ViewDataBinding, STATE : BaseState, VIEWMO
             .apply {
                 binding = this
                 lifecycleOwner = this@BaseActivity
+                setVariable(BR.viewModel,viewModel)
+                setVariable(BR.state,state)
                 executePendingBindings()
             }
     }
