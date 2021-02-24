@@ -1,0 +1,1 @@
+package me.inassar.koindependencyinjection
