@@ -1,4 +1,8 @@
 package me.inassar.koindependencyinjection.view
 
-class MainActivityViewModel {
+import me.inassar.koindependencyinjection.base.BaseState
+import me.inassar.koindependencyinjection.base.BaseViewModel
+
+class MainActivityViewModel(private val state: MainActivityState):BaseViewModel() {
+    override fun provideState(): BaseState =state
 }
